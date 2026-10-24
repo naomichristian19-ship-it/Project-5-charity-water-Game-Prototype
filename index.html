@@ -1,28 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clean Water Challenge</title>
+  <title>Water Pouring Game</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
-  <h1>Clean Water Challenge</h1>
-  <p>Transfer every drop. Waste less water!</p>
+  <main class="game">
+    <h1>Water Pouring Game</h1>
+    <p>Click the Start pouring button to begin! And don't forget to stop the faucet as close to the goal as you can.</p>
 
-  <div class="game-info">
-    <p>Score: <span id="score">0</span></p>
-    <p>Time: <span id="timer">60</span></p>
-  </div>
+    <p id="timer">Time left: 30 seconds</p>
 
-  <button id="start-button">Begin Game</button>
+    <section class="scoreboard" aria-label="Game information">
+      <p>Water goal: <span id="goal">0</span> mL</p>
+      <p>Water poured: <span id="amount">0</span> mL</p>
+      <p>Total score: <span id="score">0</span></p>
+    </section>
 
-  <div id="game-area">
-    <!-- Your buckets will go here -->
-  </div>
+    <section class="scene" aria-label="Faucet and bottle">
+      <div class="faucet" aria-hidden="true">
+        <div class="faucet-pipe"></div>
+        <div class="faucet-handle"></div>
+        <div class="faucet-spout"></div>
+        <div class="faucet-nozzle"></div>
+      </div>
 
-  <p id="feedback"></p>
+      <div id="water-stream" class="water-stream" aria-hidden="true"></div>
+
+      <div class="bottle" role="img" aria-label="Bottle filling with water">
+        <div class="bottle-neck"></div>
+        <div class="bottle-body">
+        <div id="bottle-water" class="bottle-water"></div>
+      </div>
+      </div>
+    </section>
+
+    <button id="faucet-button" type="button">Start pouring</button>
+    <button id="finish-button" type="button" hidden>Finalize attempt</button>
+    <p id="feedback" aria-live="polite">Try to pour as close to the goal as you can.</p>
+  </main>
 </body>
 </html>

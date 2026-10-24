@@ -1,34 +1,179 @@
-
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #eaf5f4;
-  color: #234b4b;
-  margin: 0;
-  padding: 30px 16px;
+* {
+  box-sizing: border-box;
 }
 
-.game-info {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  font-weight: bold;
+body {
+  background: #eaf5f4;
+  color: #234b4b;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.game {
+  width: min(600px, 100%);
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .scoreboard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+}
+
+   h1 {
+    font-size: 40px;
+   }
+
+    main > p {
+    font-size: 18px;
+   }
+
+   .scoreboard {
+    display: flex;
+    justify-content: space-around;
+   }
+
+   #feedback {
+    font-size: 18px;
+   }
+
+.scene {
+     height: 350px;
+     position: relative;
+}
+
+.faucet {
+     position: absolute;
+     top: 20px;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 80px;
+     height: 62px;
+}
+
+.faucet-pipe,
+.faucet-handle,
+.faucet-spout,
+.faucet-nozzle {
+  position: absolute;
+  background-color: silver;
+}
+
+.faucet-pipe {
+  width: 60px;
+  height: 14px;
+  border-radius: 7px;
+  top: 0;
+  left: 0;
+}
+
+.faucet-handle {
+  width: 26px;
+  height: 8px;
+  top: -8px;
+  left: 12px;
+}
+
+.faucet-spout {
+  top: 8px;
+  left: 32px;
+  width: 16px;
+  height: 50px;
+}
+
+.faucet-nozzle {
+  top: 54px;
+  left: 35px;
+  width: 10px;
+  height: 8px;
+}
+
+.water-stream {
+     width: 8px;
+     height: 68px;
+     opacity: 0;
+     position: absolute;
+     top: 82px;
+     left: 50%;
+     background: #268bd2;
+     transform: translateX(-50%);
+}
+
+.water-stream.is-flowing {
+  opacity: 0.5;
+
+}
+
+.bottle {
+      position: absolute;
+      top: 150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 140px;
+
+}
+
+.bottle-neck {
+  width: 26px;
+  height: 28px;
+  position: absolute;
+  top: 0;
+  left: 27px;
+  border: 4px solid #8abfc4;
+  border-radius: 6px 6px 0 0;
+  background: #e7f7f7;
+}
+
+.bottle-body {
+  width: 80px;
+  height: 118px;
+  position: absolute;
+  top: 22px;
+  left: 0;
+  overflow: hidden;
+  border: 4px solid #8abfc4;
+  border-radius: 12px 12px 20px 20px;
+  background: #e7f7f7;
+}
+
+.bottle-water {
+     width: 100%;
+     height: 0%;
+     background: #268bd2;
+     opacity: 0.5;
+     position: absolute;
+     bottom: 0;
+     left: 0;
+
 }
 
 button {
-  background-color: #278b83;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
+  border-radius: 5px;
   cursor: pointer;
+
 }
 
-#game-area {
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  gap: 20px;
-  margin: 40px auto;
-  min-height: 180px;
+button:focus-visible {
+  outline: 2px solid #005fcc;
+
+}
+
+@media (max-width: 420px) {
+  .game {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 }
